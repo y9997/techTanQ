@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>お問い合わせ</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <div class="header-logo"><a th:href="@{/}" style="text-decoration:none; color:inherit;">テック探求記</a></div>
+    ご意見・ご質問などお気軽にどうぞ！
+  </header>
+
+  <main>
+    <h1>お問い合わせ</h1>
+    <p>以下のフォームからご連絡いただけます。</p>
+	<form method="post" th:action="@{/contact/send}">
+    	<div class="form">
+			<div class="form--item">
+				<p class="form--item__label"><span class="form--item__label__repuired">必須</span>お名前</p>
+				<input type="text" class="form--item__input">
+			</div>
+			<br>
+			<div class="form--item">
+				<p class="form--item__label"><span class="form--item__label__repuired">必須</span>メールアドレス</p>
+				<input type="email" class="form--item__input">
+			</div>
+			<br>
+			<div class="form--item">
+				<p class="form--item__label"><span class="form--item__label__repuired">必須</span>お問い合わせ内容</p>
+				<textarea class="form--item__textarea"></textarea>
+			</div>
+			<br>
+			<input type="submit" class="form--buttom" value="送信する">
+		</div>
+	</form>
+  </main>
+
+  <footer class="footer">
+    <ul>
+      <li><a th:href="@{/about}">運営者情報</a></li>
+      <li><a th:href="@{/contact}">お問い合わせ</a></li>
+    </ul>
+    <p>2025 tech-tanQ</p>
+  </footer>
+</div>
+</body>
+</html>

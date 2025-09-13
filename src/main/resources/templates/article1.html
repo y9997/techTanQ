@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>運営者情報</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+  <header>
+    <div class="header-logo"><a th:href="@{/}" style="text-decoration:none; color:inherit;">テック探求記</a></div>
+    ようこそ！一緒にITの世界を探求しましょう！
+  </header>
+
+  <main>
+    <h1>【IDE】Eclipseとは</h1>
+    <h2>~はじめに~</h2>
+	<h3>Eclipseの概要</h3>
+	<p>	IBM社によって開発された統合開発環境(IDE)の一種。OSSなので無料で使用可能。
+	デバッグ機能やスケジュール管理、シンタックスハイライトなどの充実した基本機能に加え、拡張性やカスタマイズ性に優れているため大規模開発にも用いられる。
+	Java言語による開発を主目的に開発されたが、プラグインによりC/C++、Python、Rubyなど多様な言語にも対応している。</p>
+	<h2>~インストールしてみよう~</h2>
+	<h3>インストールの概要</h3>
+	<p>	Eclipseのインストールは言語対応によって以下の3パターンに分けられる。
+	<br>
+	英語版の場合：
+	<br>
+	1.Eclipse公式サイトからインストール
+	<br>
+	日本語版にしたい場合：
+	<br>
+	2.Eclipse公式サイトからインストール + Pleiades(日本語化するプラグイン)をインストール
+	<br>
+	3.Pleiades All in One(Eclipse+Pleiades&その他便利なプラグインをまとめたもの)をインストール
+	<br>
+	※本記事では、パターン3の方法でEclipseのインストールを行う。</p>
+	<h3>本記事の注意事項</h3>
+	<p>	本記事は以下画像のスペックでインストールを行った。バージョン等が異なる場合などは適宜自身のスペックに合わせること。</p>
+	<h3>Eclipseのインストール方法</h3>
+	<h4>1.サイトにアクセスする</h4>
+	<p>	以下のサイトにアクセスする。
+		<br>
+	https://willbrains.jp/</p>
+	<h4>2.インストーラをダウンロードする</h4>
+	<p>	対象のバージョンを選択する。
+		<br>
+	※本記事では2025版を選択</p>
+  </main>
+
+  <footer class="footer">
+    <ul>
+      <li><a th:href="@{/about}">運営者情報</a></li>
+      <li><a th:href="@{/contact}">お問い合わせ</a></li>
+    </ul>
+	<p>2025 tech-tanQ</p>
+  </footer>
+	</div>
+</body>
+</html>
