@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>テック探究記</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+</head>
+<header>
+    <div class="header-logo"><a th:href="@{/}" class="logo-link">テック探求記</a></div>
+    ようこそ！一緒にITの世界を探求しましょう！
+    <button id="toggle-dark-mode" style="position:fixed; bottom:20px; right:20px; padding:10px 15px; z-index:1000;">
+        🌙
+    </button>
+</header>
+<div class="wrapper">
+    <main>
+        <h1>記事一覧</h1>
+        <div class="article">
+            <ul class="article-list">
+                <li class="article-list__item">
+                    <article class="card">
+                        <div class="card__header">
+                            <p class="card__title">【IDE】Eclipseの基本</p>
+                            <figure class="card__thumbnail">
+                                <img src="/images/eclipse-image.png" alt="eclipse-imageサムネイル" class="card__image">
+                            </figure>
+                        </div>
+                        <div class="card__body">
+                            <p class="card__text">初心者向けにEclipseの概要からコードを書いて実行までわかりやすく解説しています！</p>
+                        </div>
+                        <div class="card__footer">
+                            <p class="card__button"><a th:href="@{/article1}" class="button_01 -compact">この記事を見る</a></p>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </div>
+</div>
+</main>
+</div>
+<footer class="footer">
+    <ul>
+        <li><a th:href="@{/about}">運営者情報</a></li>
+        <li><a th:href="@{/contact}">お問い合わせ</a></li>
+    </ul>
+    <p>2025 tech-tanQ</p>
+</footer>
+<script src="/js/darkmode.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>thankyou</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header-logo"><a th:href="@{/}" style="text-decoration:none; color:inherit;">テック探求記</a></div>
+    ようこそ！一緒にITの世界を探求しましょう！
+    <button id="toggle-dark-mode" style="position:fixed; bottom:20px; right:20px; padding:10px 15px; z-index:1000;">
+        🌙
+    </button>
+</header>
+<div class="wrapper">
+    <main>
+        <h1>~Thank you~</h1>
+        <br>
+        <p>お問い合わせありがとうございました！</p>
+    </main>
+</div>
+<footer class="footer">
+    <ul>
+        <li><a th:href="@{/about}">運営者情報</a></li>
+        <li><a th:href="@{/contact}">お問い合わせ</a></li>
+    </ul>
+    <p>2025 tech-tanQ</p>
+</footer>
+<script src="/js/darkmode.js"></script>
+</body>
+</html>

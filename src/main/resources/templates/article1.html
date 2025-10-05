@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>運営者情報</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <div class="header-logo"><a th:href="@{/}" style="text-decoration:none; color:inherit;">テック探求記</a></div>
+    ようこそ！一緒にITの世界を探求しましょう！
+    <button id="toggle-dark-mode" style="position:fixed; bottom:20px; right:20px; padding:10px 15px; z-index:1000;">
+        🌙
+    </button>
+</header>
+
+<main>
+    <div class="article">
+        <div class="wrapper">
+            <p>2025/08/31</p>
+            <h1>【IDE】Eclipseの基本</h1>
+            <img src="/images/eclipse-image.png" alt="eclipse-imageサムネイル" class="article__image">
+            <h2>0.はじめに</h2>
+            <br>
+            <p>この記事はEclipseを知らない、触ったことがない人でも読み終わる頃にはなんとなくわかる、使えることができるよう書いています。<br>
+                流れとしては、 簡単な概要を学ぶ → Eclipseをインストール → 実際に使ってみる　となっています。<br>
+                それでは、まずは概要から学んでいきましょう！
+            </p>
+            <h2>1.Eclipseとは</h2>
+            <br>
+            <p>IBM社によって開発された統合開発環境(IDE)の一種です。IDEとは、コードエディタ、コンパイラ、デバッガなどソフトウェア開発に必要なツールをまとめたものです。<br>
+                Eclipseは充実した基本機能に加え、拡張性やカスタマイズ性に優れているという特徴があり、自分のニーズに合わせた環境を構築することができます。<br>
+                そのため、初心者から上級者まで幅広く使いやすいIDEとなっています。</p>
+            <h2>2.インストールしてみよう</h2>
+            <h3>2.1.インストール方法について</h3>
+            <br>
+            <p>Eclipseのインストール方法は大きく分けて２つあります。
+                <br>
+                1.Eclipse公式サイトからインストールする。<br>
+                →この場合、Eclipse単体なので英語版です。日本語で使用したい場合、別途でPleiadesをプラグインする必要があります。<br>
+                <br>
+                2.Pleiades All in Oneをインストールする。<br>
+                →Eclipse + Pleiades + その他便利なプラグイン　のセットになっており、初心者におすすめの方法です。本記事ではこの方法を解説します。
+                <br>
+            <h3>2.2.本記事の留意事項</h3>
+            <br>
+            <p>本記事は以下画像のスペックでインストールを行ってます。<br>
+                バージョンやOS等が異なる場合などは適宜自身のスペックに合わせてください。<br>
+                <img src="/images/eclipse-2-2.png" alt="2-2PCスペック" class="article__image">
+                <br>
+                それでは、Eclipseをインストールしていきましょう！
+            </p>
+            <h3>2.3.サイトにアクセスする</h3>
+            <br>
+            <p>以下のサイトにアクセスしてください。<br>
+                https://willbrains.jp/</p>
+            <h3>2.4.インストーラをダウンロードする</h3>
+            <br>
+            <p>対象のバージョンを選択し、ダウンロードします。<br>
+                <img src="/images/eclipse-2-4.png" alt="2-4" class="article__image"><br>
+            <p>※本記事では2025版を選択</p>
+            <h3>2.5.開発対象の言語とOSを選択し、ダウンロードする</h3>
+            <br>
+            <img src="/images/eclipse-2-5.png" alt="2-5" class="article__image"><br>
+            <p>　※本記事ではJava,Macを選択</p>
+            <h3>2.6.ダウンロードしたファイルを開く</h3>
+            <br>
+            <p>ダウンロードしたdmpファイルを開き、EclipseアイコンをApplicationsにドラッグ&ドロップします。</p><br>
+            <img src="/images/eclipse-2-6.png" alt="2-6" class="article__image">
+            <h3>2.7.Eclipseを起動する</h3>
+            <br>
+            <p>ApplicationsからEclipseを起動します。<br>
+                警告が表示されたら、OKを選択します。<br>
+                ※警告が表示されない場合、2-9に進んでください。</p>
+            <img src="/images/eclipse-2-7.png" alt="2-7" class="article__image">
+            <h3>2.8.アプリケーションの実行を許可する</h3>
+            <br>
+            <p>システム環境設定　→　セキュリティとプライバシー　を開きます。<br>
+                ダウンロードしたアプリケーションの実行許可　から、　このまま開く　を選択します。</p>
+            <img src="/images/eclipse-2-8.png" alt="2-8" class="article__image">
+            <p>その後、再度Eclipseを起動してください。</p>
+            <h3>2.9.workspaceのディレクトリーを選択する</h3>
+            <br>
+            <p>workspaceのディレクトリー選択し、起動してください。<br>
+                ちなみにworkspaceとは、ソースコードのファイルなどを保管する作業場のようなものです。<br>
+                ディレクトリーとはその作業場の配置場所のことです。本記事では初期設定のままで起動しておりますが、任意の場所を指定することもできます。</p>
+            <img src="/images/eclipse-2-9.png" alt="2-9" class="article__image">
+            <h3>2.10.Eclipseが起動する</h3>
+            <br>
+            <p>しばらく待つとeclipseが起動します。</p>
+            <img src="/images/eclipse-2-10.png" alt="2-10" class="article__image">
+            <p>お疲れ様でした！それでは、実際にさわってみましょう！</p>
+            <h2>3.さわってみよう</h2>
+            <h3>3.1.Javaプロジェクトを新規作成する</h3>
+            <br>
+            <p>左上のアイコンもしくはパッケージエクスプローラー内で右クリックからJavaプロジェクトを選択してください。</p>
+            <img src="/images/eclipse-3-1-1.png" alt="3-1-1" class="article__image"><br>
+            <img src="/images/eclipse-3-1-2.png" alt="3-1-2" class="article__image">
+            <p>プロジェクト名を記入し、完了をクリックします。</p>
+            <img src="/images/eclipse-3-1-3.png" alt="3-1-3" class="article__image">
+            <p>パッケージエクスプローラー内に作成したJavaプロジェクトが表示されたら成功です。</p>
+            <img src="/images/eclipse-3-1-4.png" alt="3-1-4" class="article__image">
+            <h3>3.2.クラスファイルを作成する</h3>
+            <br>
+            <p>作成したプロジェクトフォルダを右クリックし、クラスを選択します。</p>
+            <img src="/images/eclipse-3-2-1.png" alt="3-2-1" class="article__image">
+            <p>クラスファイル名を入力し、public static void main(String[] args)にチェックを入れ、完了をクリックします。<br>
+                この時点でチェックを入れることでmainメソッドの記述を短縮することができます。</p>
+            <img src="/images/eclipse-3-2-2.png" alt="3-2-2" class="article__image">
+            <p>プロジェクトフォルダ内にクラスファイルが作成され、エディタに自動生成されたメソッド・スタブが表示されます。</p>
+            <img src="/images/eclipse-3-2-3.png" alt="3-2-3" class="atricle__image">
+            <p>mainメソッド内(6行目)に以下のコードを入力します。<br>
+                　System.out.println("Hello,World!");</p>
+            <img src="/images/eclipse-3-2-4.png" alt="3-2-4" class="article__image">
+            <P>アイコンもしくは⌘+S(macOS)もしくはctrl+S(windows)でファイルを保存します。</P>
+            <img src="/images/eclipse-3-2-5.png" alt="3-2-5" class="article__image">
+            <h3>3.3.実行する</h3>
+            <br>
+            <p>プロジェクトフォルダを右クリック→実行→Javaアプリケーション　をクリックします。</p>
+            <img src="/images/eclipse-3-3-1.png" alt="3-3-1" class="article__image">
+            <p>コンソール上にHello,World!と表示されたら成功です。お疲れ様でした！</p>
+            <img src="/images/eclipse-3-3-2.png" alt="3-3-2" class="article__image">
+            <h2>4.さいごに</h2>
+            <br>
+            <p>Eclipseの概念の理解から実行まで本当にお疲れ様でした！<br>
+                Eclipseに限らずITのツールや知識は最初はなんとなくでも手を動かすことで使いこなせるようになっていくので、今後もぜひいろいろな技術にトライしてくださいね！<br>
+                その時またここの記事を参考にしてくださると嬉しいです。ここまで読んでくださりありがとうございました！</p>
+            <br>
+            <br>
+        </div>
+    </div>
+</main>
+
+
+</div>
+<footer class="footer">
+    <ul>
+        <li><a th:href="@{/about}">運営者情報</a></li>
+        <li><a th:href="@{/contact}">お問い合わせ</a></li>
+    </ul>
+    <p>2025 tech-tanQ</p>
+</footer>
+<script src="/js/darkmode.js"></script>
+</body>
+</html>

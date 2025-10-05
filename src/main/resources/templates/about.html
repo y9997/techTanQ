@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>運営者情報</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<header>
+    <div class="header-logo"><a th:href="@{/}" style="text-decoration:none; color:inherit;">テック探求記</a></div>
+    ようこそ！一緒にITの世界を探求しましょう！
+    <button id="toggle-dark-mode" style="position:fixed; bottom:20px; right:20px; padding:10px 15px; z-index:1000;">
+        🌙
+    </button>
+</header>
+<div class="wrapper">
+    <main>
+        <h1>運営者情報</h1>
+        <img src="/images/aboutIMG.jpg" alt="高尾山" class="article__image">
+        <p><br>はじめまして！このサイトを運営しているYと申します。<br>
+            社会人２年目のエンジニアで、趣味は読書と散歩です。写真は高尾山に行った時のもので自然に触れることも大好きです。<br>
+            本ブログは業務や独学を通して得た知見を記事にまとめることで知識を体系化すること、それを共有することでどなたかのお役に立つことができればと思って始めました。IT技術への興味が強いのでインフラから開発、ハードなど分野問わず記事にしていきたいと思っています。<br>
+            本記事やサイトにご意見・ご感想等がございましたらお気軽にお問い合わせフォームやX、Qiitaからご連絡いただけると幸いです。<br>
+            　<br>
+            <a href="https://x.com/ユーザー名" target="_blank">
+                <i class="fab fa-x-twitter icon"></i>
+            </a>
+            <a href="https://github.com/y9997" target="_blank">
+                <i class="fab fa-github icon"></i>
+            </a>
+            <a href="https://qiita.com/あなたのユーザー名" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+                    <!-- 緑丸背景 -->
+                    <circle cx="20" cy="20" r="20" fill="#55C500"/>
+                    <!-- 白のQ文字 -->
+                    <text x="20" y="27" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="white" font-weight="bold">Q</text>
+                </svg>
+            </a>
+            <br>
+        </p>
+
+    </main>
+</div>
+<footer class="footer">
+    <ul>
+        <li><a th:href="@{/about}">運営者情報</a></li>
+        <li><a th:href="@{/contact}">お問い合わせ</a></li>
+    </ul>
+    <p>2025 tech-tanQ</p>
+</footer>
+<script src="/js/darkmode.js"></script>
+</body>
+</html>
