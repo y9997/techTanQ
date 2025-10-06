@@ -25,4 +25,9 @@ public class HomeController {
     public String article1() {
         return "article1";
     }
+
+    @GetMapping("/article2")
+    public String article2() {
+        return "article2";
+    }
 }
