@@ -6,14 +6,30 @@
     <link rel="stylesheet" th:href="@{/css/style.css}" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 </head>
+ <body>
 <header>
     <div class="header-logo"><a th:href="@{/}" class="logo-link">テック探求記</a></div>
-    ようこそ！一緒にITの世界を探求しましょう！
+    <nav>
+        <ul class="header-ul" style="display: flex; align-items: center; justify-content: space-between;">
+            <li class="header-li"><a th:href="@{/about}">ホーム</a></li>
+            <li class="header-li"><a th:href="@{/about}">プロフィール</a></li>
+            <li class="header-li"><a th:href="@{/contact}">お問い合わせ</a></li>
+            <li class="header-li">
+                <form action="/search" method="get" style="display: flex; align-items: center;">
+                    <input type="search" name="q" placeholder="サイト内検索">
+                    <button type="submit">検索</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 検索フォーム -->
+
     <button id="toggle-dark-mode" style="position:fixed; bottom:20px; right:20px; padding:10px 15px; z-index:1000;">
-        🌙
+        ☽
     </button>
 </header>
-<div class="wrapper">
+<div class="wrapperHome">
     <main>
         <h1>記事一覧</h1>
         <div class="article">
@@ -30,7 +46,25 @@
                             <p class="card__text">初心者向けにEclipseの概要からコードを書いて実行までわかりやすく解説しています！</p>
                         </div>
                         <div class="card__footer">
-                            <p class="card__button"><a th:href="@{/article1}" class="button_01 -compact">この記事を見る</a></p>
+                            <p class="card__button"><a th:href="@{/article1}" class="button_01 -compact">この記事を読む</a></p>
+                        </div>
+                    </article>
+                </li>
+
+
+                <li class="article-list__item">
+                    <article class="card">
+                        <div class="card__header">
+                            <p class="card__title">【GitHub】初心者のための完全ガイド</p>
+                            <figure class="card__thumbnail">
+                                <img src="/images/github-image.png" alt="github-imageサムネイル" class="card__image">
+                            </figure>
+                        </div>
+                        <div class="card__body">
+                            <p class="card__text">初心者向けにGithubの概要や基本的なコマンドをわかりやすく図解してまとめました！</p>
+                        </div>
+                        <div class="card__footer">
+                            <p class="card__button"><a th:href="@{/article2}" class="button_01 -compact">この記事を読む</a></p>
                         </div>
                     </article>
                 </li>
@@ -38,31 +72,31 @@
                 <li class="article-list__item">
                     <article class="card">
                         <div class="card__header">
-                            <p class="card__title">【図解】Githubとは<br></p>
+                            <p class="card__title">【Python】ゼロからわかる仮想環境</p>
                             <figure class="card__thumbnail">
-                                <img src="/images/github-image.png" alt="github-imageサムネイル" class="card__image">
+                                <img src="/images/python-image.png" alt="python-imageサムネイル" class="card__image">
                             </figure>
                         </div>
                         <div class="card__body">
-                            <p class="card__text"><br><br>初心者向けにGithubの概要や基本的なコマンドをわかりやすく図解してまとめました！</p>
+                            <p class="card__text">初心者向けにGithubの概要や基本的なコマンドをわかりやすく図解してまとめました！</p>
                         </div>
                         <div class="card__footer">
-                            <p class="card__button"><a th:href="@{/article2}" class="button_01 -compact">この記事を見る</a></p>
+                            <p class="card__button"><a th:href="@{/article2}" class="button_01 -compact">この記事を読む</a></p>
                         </div>
                     </article>
                 </li>
 
+                            <!-- <p class="card__text"><br><br>初心者向けにGithubの概要や基本的なコマンドをわかりやすく図解してまとめました！</p> -->
+
+
             </ul>
         </div>
-</div>
 </main>
 </div>
 <footer class="footer">
-    <ul>
-        <li><a th:href="@{/about}">運営者情報</a></li>
-        <li><a th:href="@{/contact}">お問い合わせ</a></li>
-    </ul>
-    <p>2025 tech-tanQ</p>
+    <div style="text-align:center">
+    <p>2025 tech-tanQ.</p>
+    </div>
 </footer>
 <script src="/js/darkmode.js"></script>
 </body>
