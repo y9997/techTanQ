@@ -8,11 +8,27 @@
 </head>
 <body>
 <header>
-    <div class="header-logo"><a th:href="@{/}" style="text-decoration:none; color:inherit;">テック探求記</a></div>
-    ご意見・ご質問などお気軽にどうぞ！
-    <button id="toggle-dark-mode" style="position:fixed; bottom:20px; right:20px; padding:10px 15px; z-index:1000;">
-        🌙
-    </button>
+    <div class="header-logo"><a th:href="@{/}" class="logo-link">テック探求記</a></div>
+    <nav>
+        <ul class="header-ul" style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+            <li class="header-li">
+                <button id="toggle-dark-mode" style="padding: 8px 12px; border: none; background: none; cursor: pointer; font-size: 18px;">
+                    🌙
+                </button>
+            </li>
+            <li class="header-li"><a th:href="@{/}">ホーム</a></li>
+            <li class="header-li"><a th:href="@{/about}">プロフィール</a></li>
+            <li class="header-li"><a th:href="@{/contact}">お問い合わせ</a></li>
+            <li class="header-li">
+                <form action="/search" method="get" style="display: flex; align-items: center;">
+                    <input type="search" name="q" placeholder="サイト内検索">
+                    <button type="submit">検索</button>
+                </form>
+            </li>
+        </ul>
+
+    </nav>
+
 </header>
 <div class="wrapper">
     <main>
@@ -41,11 +57,9 @@
     </main>
 </div>
 <footer class="footer">
-    <ul>
-        <li><a th:href="@{/about}">運営者情報</a></li>
-        <li><a th:href="@{/contact}">お問い合わせ</a></li>
-    </ul>
-    <p>2025 tech-tanQ</p>
+    <div style="text-align:center">
+        <p>© 2025 tech-tanQ.</p>
+    </div>
 </footer>
 <script src="/js/darkmode.js"></script>
 </body>

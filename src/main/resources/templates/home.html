@@ -10,7 +10,12 @@
 <header>
     <div class="header-logo"><a th:href="@{/}" class="logo-link">テック探求記</a></div>
     <nav>
-        <ul class="header-ul" style="display: flex; align-items: center; justify-content: space-between;">
+        <ul class="header-ul" style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+            <li class="header-li">
+                <button id="toggle-dark-mode" style="padding: 8px 12px; border: none; background: none; cursor: pointer; font-size: 18px;">
+                    🌙
+                </button>
+            </li>
             <li class="header-li"><a th:href="@{/}">ホーム</a></li>
             <li class="header-li"><a th:href="@{/about}">プロフィール</a></li>
             <li class="header-li"><a th:href="@{/contact}">お問い合わせ</a></li>
@@ -21,13 +26,9 @@
                 </form>
             </li>
         </ul>
+
     </nav>
 
-    <!-- 検索フォーム -->
-
-    <button id="toggle-dark-mode" style="position:fixed; bottom:20px; right:20px; padding:10px 15px; z-index:1000;">
-        ☽
-    </button>
 </header>
 <div class="wrapperHome">
     <main>
@@ -95,7 +96,7 @@
 </div>
 <footer class="footer">
     <div style="text-align:center">
-    <p>2025 tech-tanQ.</p>
+    <p>© 2025 tech-tanQ.</p>
     </div>
 </footer>
 <script src="/js/darkmode.js"></script>

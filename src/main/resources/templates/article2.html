@@ -18,10 +18,25 @@
 
 <body>
 <header>
-    <div class="header-logo"><a th:href="@{/}" style="text-decoration:none; color:inherit;">テック探求記</a></div>
-    <button id="toggle-dark-mode" style="position:fixed; bottom:20px; right:20px; padding:10px 15px; z-index:1000;">
-        🌙
-    </button>
+    <div class="header-logo"><a th:href="@{/}" class="logo-link">テック探求記</a></div>
+    <nav>
+        <ul class="header-ul" style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+            <li class="header-li">
+                <button id="toggle-dark-mode" style="padding: 8px 12px; border: none; background: none; cursor: pointer; font-size: 18px;">
+                    🌙
+                </button>
+            </li>
+            <li class="header-li"><a th:href="@{/}">ホーム</a></li>
+            <li class="header-li"><a th:href="@{/about}">プロフィール</a></li>
+            <li class="header-li"><a th:href="@{/contact}">お問い合わせ</a></li>
+            <li class="header-li">
+                <form action="/search" method="get" style="display: flex; align-items: center;">
+                    <input type="search" name="q" placeholder="サイト内検索">
+                    <button type="submit">検索</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
 </header>
 
 <main>
@@ -31,7 +46,6 @@
             <h1>【図解】GitHubとは</h1>
             <img src="/images/github-image.png" alt="github-imageサムネイル" class="article__image">
             <h2>目次</h2>
-            <br>
                 <p>0.はじめに</p>
                 <p>1.基本概要</p>
                 <p>　1.1.GitHubとは</p>
@@ -49,22 +63,26 @@
             <br>
 
             <h2>はじめに</h2>
-                <br>
                 <p>本記事は、プログラミングを学び始めた方や経験の浅いエンジニア向けに、GitHubの基本から使い方までを解説します。<br>
+                    <br>
                     GitHubは世界中の開発者が利用しているサービスで、ソースコードの管理やチームでの共同開発に欠かせないツールです。<br>
                     この記事を読むことで、「GitHubとは何か？」から始まり、最低限の操作（環境構築、コミット、プッシュ）ができるようになります。さらに応用編では、チーム開発でよく使われるブランチやPull Requestについても触れていきます。<br>
+                    <br>
                     初めての方でも安心して読み進められるよう、図を多用してわかりやすく説明しますので、ぜひ一緒に学んでいきましょう！
                 </p>
-
+                    <br>
             <h2>基本概要</h2>
                 <h3>Githubとは</h3>
                     <p>Githubは、ソフトウェア開発のためのWebベースのプラットフォームで、ソースコードの管理や共有、バージョン管理を簡単に行うことができます。<br>
+                        <br>
                         Gitという分散型バージョン管理システムをベースにしており、チーム開発はもちろん個人開発にも広く利用されています。<br>
                         GitHubを使えば、コードの履歴を追ったり、他の開発者と効率的に連携したり、修正内容をレビューして反映するなど、開発の質とスピードを大きく向上させることができます。<br>
+                        <br>
                         現在、GitHubのユーザー数は1億人を超えており、世界中の開発現場で活用されています。<br>
                         プログラミングを生んでいる方やエンジニアを目指す方にとって、GitHubのスキルは必須とも言えるでしょう。
                     </p>
-
+                        <br>
+                        <br>
                 <h3>リポジトリとは</h3>
                     <p>リポジトリとは、コード、ファイル、各ファイルの改訂履歴を保存、管理する場所のことです。GitHubでは、このリポジトリを使ってプロジェクトの状態を記録し、過去の変更を追跡することができます。<br>
                         <br>
@@ -368,11 +386,9 @@
 
 </div>
 <footer class="footer">
-    <ul>
-        <li><a th:href="@{/about}">運営者情報</a></li>
-        <li><a th:href="@{/contact}">お問い合わせ</a></li>
-    </ul>
-    <p>2025 tech-tanQ</p>
+    <div style="text-align:center">
+        <p>© 2025 tech-tanQ.</p>
+    </div>
 </footer>
 <script src="/js/darkmode.js"></script>
 </body>
