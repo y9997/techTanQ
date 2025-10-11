@@ -12,3 +12,6 @@ btn.addEventListener('click', () => {
   localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
   btn.textContent = isDark ? '☀️' : '🌙';
 });
+
+//フッターの日付
+document.getElementById("year").textContent = new Date().getFullYear();
