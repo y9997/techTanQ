@@ -244,8 +244,8 @@ main {
 
 h1 {
     padding: 0 0 0 20px;
-    /*border-left: solid 7px #01bd5a;#5c8776*/
-    border-left: solid 7px #33b37f;
+   /* border-left: solid 7px #01bd5a;#5c8776*/
+    border-left: solid 7px lightskyblue;/*#33b37f  #4a90e2*/
     font-size: 30px;
     line-height: 1.4;
 }
@@ -258,17 +258,37 @@ h2 {
     font-size: 30px;
      /*border-bottom: 4px solid #d2e3de;*/
      /*line-height: 1.4;*/
-	background-color: #d2e3de;/*#d2e3de;*/
+	background-color: #d9e7f6;/*#d2e3de;*/
 	transition: background-color 0.3s, color 0.3s;
+	box-shadow: 0px 0px 0px 5px #dfefff;
+      border: dashed 2px white;
+      padding: 0.2em 0.5em;
+	border-radius: 0.5em;
 }
 
 h3 {
     margin: 10px 0;
     /*margin: 35px 0 0;*/
     padding: 0 0 0 6px;
-	border-left: solid 5px #d2e3de;
+	/*border-left: solid 5px #d9e7f6;
     /*border-bottom: solid 1px #ccc;*/
     font-size: 24px;
+}
+
+h3::before,
+          h3::after {
+  content: "◆";
+  color: #d9e7f6;
+  margin-right: 8px;
+  font-size: 0.9em;
+}
+
+h3::before {
+  margin-right: 8px;
+}
+
+h3::after {
+  margin-left: 8px;
 }
 
  p {
