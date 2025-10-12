@@ -49,11 +49,7 @@ html, body {
   padding: 5px;
 }
 
-.wrapper {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+
 
 .wrapperHome {
     margin: 70px;
@@ -80,15 +76,64 @@ main {
 .toc a:hover {
   color: #4a90e2;
 }
+.toc-fixed {
+  position: fixed;
+  top: 100px;
+  right: 50px;
+  width: 300px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  padding: 1em;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.toc-toggle {
+  position: absolute;
+  top: 5px;
+  right: 290px;
+  background-color: #d9e7f6;
+  /*background: none;*/
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;/*#333;*/
+  border-radius: 0.5em;
+}
+.toc-hidden ul {
+  display: none;
+}
+.toc-toggle:hover {
+  color: #4a90e2;
+}
+@media (max-width: 1400px) {
+  .toc-fixed {
+    display: none;
+  }
+}
+.toc a.active {
+  color: #4a90e2;
+  font-weight: bold;
+}
 
-
- /* article */
-.article {
+.article { /* 配置系 */
 	width: 100%;
 	display:flex;
 	font-size: 17px;
 	line-height: 1.8;
 	letter-spacing: 0.03em;
+    /*padding-left: 170px;*/
+}
+.wrapper { /*幅用*/
+      max-width: 800px;
+     margin-left: 170px;
+      /*padding: 20px;*/
+    }
+@media (max-width: 900px) {
+  .wrapper {
+    margin-left: 1px;
+    margin-right: 1px;
+  }
 }
 .article-list {
   list-style: none;
