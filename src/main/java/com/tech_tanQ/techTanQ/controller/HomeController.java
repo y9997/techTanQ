@@ -30,4 +30,9 @@ public class HomeController {
     public String article2() {
         return "article2";
     }
+
+    @GetMapping("/article3")
+    public String article3() {
+        return "article3";
+    }
 }

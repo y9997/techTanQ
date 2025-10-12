@@ -48,9 +48,6 @@ html, body {
   margin: 0;
   padding: 5px;
 }
-
-
-
 .wrapperHome {
     margin: 70px;
     justify-content: center;
@@ -100,6 +97,11 @@ main {
   color: white;/*#333;*/
   border-radius: 0.5em;
 }
+body.dark-mode .toc-toggle {
+  color: #f0f0f0;          /* ボタンの文字色 */
+  background-color: #333;  /* ボタン背景を暗くしたい場合 */
+}
+
 .toc-hidden ul {
   display: none;
 }
@@ -129,7 +131,11 @@ main {
      margin-left: 170px;
       /*padding: 20px;*/
     }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+  .article{
+  justify-content: center;
+  display: flex;
+  }
   .wrapper {
     margin-left: 1px;
     margin-right: 1px;
