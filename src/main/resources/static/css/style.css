@@ -1,4 +1,8 @@
 @charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
 header{
 	height: 70px;
 	/*background-color: lightskyblue;*/
@@ -53,17 +57,35 @@ html, body {
 
 .wrapperHome {
     margin: 70px;
+    justify-content: center;
 }
 
 main {
   flex: 1;
 }
+.toc ul {
+  list-style: none;
+  padding-left: 1em;
+}
+
+.toc li {
+  margin: 0.4em 0;
+}
+
+.toc a {
+  text-decoration: none;
+  color: #333;
+}
+
+.toc a:hover {
+  color: #4a90e2;
+}
+
 
  /* article */
 .article {
 	width: 100%;
 	display:flex;
-
 	font-size: 17px;
 	line-height: 1.8;
 	letter-spacing: 0.03em;
