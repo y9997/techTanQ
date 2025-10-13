@@ -407,7 +407,7 @@ body {
   top: 8px;
   right: 8px;
   background: #d9e7f6;
-  color: white;
+  color: black;
   border: none;
   padding: 4px 8px;
   border-radius: 4px;
@@ -433,15 +433,9 @@ body {
   background: silver;
   text-decoration: none;
 }
-
-
 .link_button:visited {
   color: gray;
 }
-
-
-
-
 
 body.dark-mode {
   background-color: #1e1e1e;
