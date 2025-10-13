@@ -25,6 +25,20 @@ header{
 .header-li {
     padding-left:20px;
 }
+@media (max-width: 1000px) {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-logo {
+      display: block;
+  }
+  .header-li {
+      display: none;
+  }
+}
+
 nav {
     /*justify-content: space-around;*/
     justify-content: space-between;
@@ -98,8 +112,8 @@ main {
   border-radius: 0.5em;
 }
 body.dark-mode .toc-toggle {
-  color: #f0f0f0;          /* ボタンの文字色 */
-  background-color: #333;  /* ボタン背景を暗くしたい場合 */
+  color: #f0f0f0;
+  background-color: #333;
 }
 
 .toc-hidden ul {
@@ -368,14 +382,53 @@ h3::after {
 	margin: 0;
 	font-size: 20px;
 }
+.underline {
+    background: linear-gradient(transparent 80%, #d9e7f6 70%);
+}
+
 body {
   font-family: 'Noto Sans JP', sans-serif;
   background-color: #ffffff;
     color: #212121;
     transition: background-color 0.3s, color 0.3s;
 }
+.code-block {
+  position: relative;
+  background: #1e1e1e;
+  color: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-family: monospace;
+  margin: 1em 0;
+}
 
-/* ナイトモード */
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #d9e7f6;
+  color: black;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8em;
+  transition: background 0.2s;
+}
+
+.copy-btn:hover {
+  background: #4a90e2;
+}
+body.dark-mode .code-block {
+  background: #2b2b2b;
+  color: #e0e0e0;
+}
+
+body.dark-mode .copy-btn {
+  background: #6ba5f2;
+}
+
+
 body.dark-mode {
   background-color: #1e1e1e;
   color: #f0f0f0;

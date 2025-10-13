@@ -1,6 +1,6 @@
 const btn = document.getElementById('toggle-dark-mode');
 
-// ページ読み込み時に状態を復元
+// ダークモード
 if(localStorage.getItem('darkMode') === 'enabled'){
   document.body.classList.add('dark-mode');
   btn.textContent = '☀️';
@@ -50,3 +50,18 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+//コピー機能
+document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.copy-btn');
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const code = btn.previousElementSibling.innerText;
+          navigator.clipboard.writeText(code).then(() => {
+            btn.textContent = 'コピーしました！';
+            setTimeout(() => btn.textContent = 'コピー', 1500);
+          });
+        });
+      });
+    });

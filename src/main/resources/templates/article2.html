@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>運営者情報</title>
@@ -133,27 +133,27 @@
                 <h3 id="section13">用語解説</h3>
                     <p>GitHubを使う上で頻繁に登場する基本用語を初心者向けにわかりやすく解説します。<br>
                         <br>
-                        ステージ<br>
+                        <span class="underline">ステージ</span><br>
                         リモートリポジトリに反映したいファイルを選び、変更を記録する準備をすることを「ステージ」と呼びます。<br>
                         この操作によって、どのファイルを次のコミットに含めるかを指定できます。<br>
                         <br>
-                        コミット<br>
+                        <span class="underline">コミット</span><br>
                         ステージしたファイルの変更内容を、ローカルリポジトリに保存する操作です。<br>
                         「いつ」「何を変更したか」を記録することで、履歴を追えるようになります。<br>
                         <br>
-                        プッシュ<br>
+                        <span class="underline">プッシュ</span><br>
                         ローカルリポジトリに保存された変更をリモートリポジトリに反映させる操作です。<br>
                         これにより、他の開発者と変更内容を共有できます。<br>
                         <br>
-                        ブランチ<br>
+                        <span class="underline">ブランチ</span><br>
                         リポジトリに中で、機能追加や修正などを行うために分岐させた作業用の領域です。<br>
                         本流(main)とは別に作業できるため、安全に開発を進められます。<br>
                         <br>
-                        クローン<br>
+                        <span class="underline">クローン</span><br>
                         リモートリポジトリの内容を、自分のローカル環境にコピーする操作です。<br>
                         これにより、手元で編集や確認ができるようになります。<br>
                         <br>
-                        フォーク<br>
+                <span class="underline">フォーク</span><br>
                         他人のリモートリポジトリをコピーして、自分のGitHubアカウント常に新しいリモートリポジトリを作成する操作です。<br>
                         オープンソースプロジェクトへの貢献や、独自の改良を加える際に使われます。<br>
                     </p>
@@ -163,41 +163,57 @@
                     個人開発に必要なスキルが身につく構成になっていますので、ぜひ本章を参考に実際に手を動かしてみてください。<br>
                     </p>
                     <h3 id="section21">環境構築</h3>
-                        <p>・Gitのインストール<br>
+                        <p>
+                        <span class="underline">Gitのインストール</span><br>
                         GitHubはGitに依存しているため、ローカル環境にGitが存在している必要があります。<br>
                             ここでは、OS別にGitのインストール方法を紹介します。<br>
                             <br>
                             macOS<br>
-                            1.まずはターミナルを開き、Gitがインストールされているか以下のコマンドで確認してください。<br>
-                            　　　git --version<br>
-                            　　　バージョンが訪寺されない場合は、以下の手順でインストールしてください。<br>
+                            1.まずはターミナルを開き、Gitがインストールされているか以下のコマンドで確認してください。
+                            　　　<div class="code-block">
+                                <pre><code>git --version</code></pre>
+                                <button class="copy-btn">copy</button>
+            </div>
+                <p>バージョンが表示されない場合は、以下の手順でインストールしてください。<br>
                             <br>
-                            2.homebrewでインストールします。以下のコマンドを実行してください。<br>
-                            　　　brew install git<br>
+                            2.homebrewでインストールします。以下のコマンドを実行してください。
+                            　　　<div class="code-block">
+                                <pre><code>brew install git</code></pre>
+                                 <button class="copy-btn">copy</button></div>
                             <br>
-                            3.再度バージョン確認を行い、表示されればインストール完了です。<br>
-                            　　　git --version<br>
+                            <p>
+                            3.再度バージョン確認を行い、表示されればインストール完了です。
+                                <div class="code-block">
+                                    <pre><code>git --version</code></pre>
+                                    <button class="copy-btn">コピー</button>
+                                </div>
                             <br>
                             <br>
-                            windows<br>
+                            <p>
+                                windows<br>
                             1.以下の公式ページからwindows版Gitをダウンロードしてインストールします。<br>
                             　　　https://git-scm.com/downloads<br>
                             <br>
-                            2.インストール後、コマンドプロンプトを開いて以下のコマンドを実行します。<br>
-                            　　　git --version<br>
-                            　　　バージョン情報が表示されたら成功です。<br>
+                            2.インストール後、コマンドプロンプトを開いて以下のコマンドを実行します。
+                            　　　<div class="code-block">
+                                    <pre><code>git --version</code></pre>
+                                    <button class="copy-btn">コピー</button>
+                                </div>
+
+                            　　　<p>バージョン情報が表示されたら成功です。</p><br>
                             <br>
                             <br>
-                            ・GitHubアカウント作成<br>
-                            　GitHubを利用するには、アカウントが必要です。<br>
-                            　以下のGitHub公式サイトにアクセスし、アカウントを新規作成してください。<br>
+                            <p>
+                            <span class="underline">GitHubアカウント作成</span><br>
+                            GitHubを利用するには、アカウントが必要です。<br>
+                            以下のGitHub公式サイトにアクセスし、アカウントを新規作成してください。<br>
                             　URL
                         </p>
-
+                        </p>
                 <h3 id="section22">リポジトリ作成と連携</h3>
                     <p>ここでは、GitHub上のリモートリポジトリと、PC上のローカルリポジトリの作成と連携方法について解説します<br>
                     <br>
-                        ・リモートリポジトリの作成<br>
+                        <span class="underline">リモートリポジトリの作成</span><br>
                         GitHubの公式サイトから、GUI操作で簡単に作成できます。<br>
                         <br>
                         1.以下のURLからGitHubにアクセスし、ログインしてください。<br>
@@ -212,31 +228,42 @@
                         これでリモートリポジトリに作成は環境です。<br>
                         <br>
                         <br>
-                        ・ローカルリポジトリの作成<br>
+                        <span class="underline">ローカルリポジトリの作成</span><br>
                         ローカルリポジトリは、任意のディレクトリに.gitフォルダを作成することで構築できます。<br>
                         このgitフォルダにはリモートリポジトリとの接続情報や、ファイルの変更履歴などが保存されます。<br>
                         <br>
-                        ローカルリポジトリを作成したいディレクトリから以下のコマンドを実行します。」<br>
-                         　　　git init<br>
+                        ローカルリポジトリを作成したいディレクトリから以下のコマンドを実行します。
+                         　　　<div class="code-block">
+                                    <pre><code>git init</code></pre>
+                                    <button class="copy-btn">コピー</button>
+                                </div>
                         <br>
-                        以下のコマンドを実行して、.gitフォルダが混在するか確認を行います。<br>
-                        　　　ls -a<br>
+                        <p>以下のコマンドを実行して、.gitフォルダが混在するか確認を行います。</p>
+                            <div class="code-block">
+                                <pre><code>ls -a</code></pre>
+                                <button class="copy-btn">コピー</button>
+                            </div>
+
                         <br>
-                        .gitが表示されたらローカルリポジトリの作成は完了です。<br>
-                        表示されない場合は再度git initを実行してください。<br>
+                        <p>.gitが表示されたらローカルリポジトリの作成は完了です。<br>
+                        表示されない場合は再度git initを実行してください。</p><br>
                         <br>
                         <br>
-                        ・リポジトリ同士を繋げる<br>
+                <p>
+                        <span class="underline">リポジトリ同士を繋げる</span><br>
                         現段階では各リポジトリは独立している状態なので、繋げる必要があります。<br>
                         以下のコマンドを実行します。<br>
                          　git remote add origin https://github.com/ユーザー名/リポジトリ名.git<br>
                         <br>
-                        連携が成功したか確認するには以下のコマンドを実行してください。<br>
-                        　　　git remote -v<br>
+                        連携が成功したか確認するには以下のコマンドを実行してください。</p>
+                            <div class="code-block">
+                                <pre><code>git remote -v</code></pre>
+                                <button class="copy-btn">コピー</button>
+                            </div>
                         <br>
-                        下記のように表示されたら成功です。<br>
+                        <p>下記のように表示されたら成功です。<br>
                         　　　origin https://github.com/ユーザー名/リポジトリ名.git(fetch)<br>
-                        　　　origin https://github.com/ユーザー名/リポジトリ名.git(push)<br>
+                        　　　origin https://github.com/ユーザー名/リポジトリ名.git(push)<br></p>
                     </p>
                 <h3 id="section23">プッシュ</h3>
                     <p>前項でリポジトリの作成と連携ができたので、ファイルをプッシュしてみましょう。<br>
@@ -245,28 +272,43 @@
                         <br>
                         1.ステージする<br>
                         　変更や追加したファイルを「次の作業対象」として登録する操作を行います。<br>
-                        　.gitが存在するディレクトリから以下のコマンドを実行します。<br>
-                        　　　git add .<br>
+                        　.gitが存在するディレクトリから以下のコマンドを実行します。
+                        　　　<div class="code-block">
+                                <pre><code>git add .</code></pre>
+                                <button class="copy-btn">コピー</button>
+                            </div>
+
                         <br>
-                        　特定のファイルだけをステージしたい場合は、以下のように指定します。<br>
-                        　　　git add ファイル名<br>
-                        <br>
+                        　<p>特定のファイルだけをステージしたい場合は、以下のように指定します。</p>
+                            <div class="code-block">
+                                <pre><code>git add ファイル名</code></pre>
+                                <button class="copy-btn">コピー</button>
+                            </div>
+                        <br><p>
                         2.コミットする<br>
                         　ステージしたファイルを「変更履歴」として記録します。<br>
-                          以下のコマンドを実行します。メッセージは変更内容がわかるように書くと良いです。<br>
-                        　　　git commit -m "first commit"<br>
+                          以下のコマンドを実行します。メッセージは変更内容がわかるように書くと良いです。
+                            <div class="code-block">
+                                <pre><code>git commit -m "first commit"</code></pre>
+                                <button class="copy-btn">コピー</button>
+                            </div>
                         <br>
-                        3.プッシュする<br>
+                        <p>3.プッシュする<br>
                         　以下のコマンドを実行します。<br>
-                        　ローカルの変更をGitHub上のリポジトリに反映させます。<br>
-                        　　　git push<Br>
-                        <br>
+                        　ローカルの変更をGitHub上のリポジトリに反映させます。</p>
+                        　　　<div class="code-block">
+                                <pre><code>git push</code></pre>
+                                <button class="copy-btn">コピー</button>
+                            </div>
+
+                <br>
+                <p>
                         4.確認する<br>
-                        　プッシュが成功したか確認するにはGitHubにアクセスします。<br>
+                        プッシュが成功したか確認するにはGitHubにアクセスします。<br>
                         　　　公式サイト<br>
                         <br>
-                        　自身のアカウント→対象のリポジトリを開いてください。<br>
-                        　ファイルが表示されたら成功です。<br>
+                        自身のアカウント→対象のリポジトリを開いてください。<br>
+                        ファイルが表示されたら成功です。<br></p>
 
                         <h2 id="section3">応用編</h2>
                         <p>この章ではチーム開発が可能なスキルを身につけることができるようまとめました。<br>
@@ -284,30 +326,38 @@
                                 <br>
                                 それでは実際に操作してみましょう。<br>
                                 <br>
-                                ・クローン<br>
-                                　以下のコマンドを実行しクローンします。<br>
+                                    <span class="underline">クローン</span><br>
+                                以下のコマンドを実行しクローンします。<br>
                                 　　git clone https://github.com/ユーザー名/リポジトリ名.git<br>
                                 　　<br>
-                                　クローンが成功したか確認するため以下のコマンドを実行します。<Br>
-                                　　ls -a<br>
-                                <br>
-                                　リポジトリ名と同じ名前のフォルダが作成されていれば成功です。<br>
-                                　そのフォルダ内にクローンしたファイル群が入っています。<br>
-                                <br>
-                                ・プル<Br>
-                                　以下のコマンドを実行しプルします。<br>
-                                　　git pull origin main<br>
-                                　originはリモートリポジトリの名前(通常はorigin)、mainはブランチ名です。<br>
-                                <br>
-                                 　実行後、以下のようなメッセージが表示されれば成功です。<br>
-                                　　　remote:Enumerating objects:...<br>
-                                　　　remote:Counting objects:...<br>
-                                <br>
-                                　　　Updating abc1234..def5678<br>
-                                　　　Fast-forward<br>
-                                　　　ファイル名｜変更行数<br>
-                            </p>
+                                クローンが成功したか確認するため以下のコマンドを実行します。
+                                　　<div class="code-block">
+                                        <pre><code>ls -a</code></pre>
+                                        <button class="copy-btn">コピー</button>
+                                    </div>
 
+                                <br><p>リポジトリ名と同じ名前のフォルダが作成されていれば成功です。<br>
+                                そのフォルダ内にクローンしたファイル群が入っています。<br>
+                                <br></p>
+                                    <p><span class="underline">プル</span><Br>
+                                以下のコマンドを実行しプルします。</p>
+                                    <div class="code-block">
+                                        <pre><code>git pull origin main</code></pre>
+                                        <button class="copy-btn">コピー</button>
+                                    </div>
+                                <p>originはリモートリポジトリの名前(通常はorigin)、mainはブランチ名です。<br>
+                                <br>
+                                 実行後、以下のようなメッセージが表示されれば成功です。
+                <div class="code-block">
+                    <pre><code>
+    remote:Enumerating objects:...
+　　remote:Counting objects:...
+
+　　Updating abc1234..def5678
+　　Fast-forward
+　　ファイル名｜変更行数
+                    </code></pre>
+                </div>
                             <h3 id="section32">ブランチとマージ</h3>
                                     <p>ブランチとマージはチーム開発を安全に行うために重要な技術です。<br>
                                     <br>
@@ -318,43 +368,63 @@
                                     <br>
                                     ブランチで作業用の領域を作り機能追加などを行った後にマージを行うことで、安全に開発を行うことができます。<br>
                                     <br>
-                                    それでは実際の操作を説明します。<br>
-                                    ・ブランチ<br>
-                                     　以下のコマンドを実行します。<br>
-                                    　　　git branch ブランチ名<br>
+                                    それでは実際の操作を説明します。<br><br>
+                                        <span class="underline">ブランチ</span><br>
+                                     以下のコマンドを実行します。
+                                    <div class="code-block">
+                                        <pre><code>git branch ブランチ名</code></pre>
+                                        <button class="copy-btn">コピー</button>
+                                    </div>
                                     <br>
-                                    　　ブランチができたのか確認するには以下のコマンドを実行します。<br>
-                                    　　　git branch<br>
-                                    　　　作成したブランチ名が表示されていればブランチの作成は成功です。<br>
+                                    <p>ブランチができたのか確認するには以下のコマンドを実行します。</p>
+                                    <div class="code-block">
+                                        <pre><code>git branch</code></pre>
+                                        <button class="copy-btn">コピー</button>
+                                    </div>
+                                    <p>作成したブランチ名が表示されていればブランチの作成は成功です。</p><br>
                                     <br>
-                                    ・マージ<br>
-                                    　まず、マージ先のブランチに切り替えます。(例：mainブランチ)<br>
-                                    　　　git switch main<br>
+                                        <p><span class="underline">マージ</span><br>
+                                            まず、マージ先のブランチに切り替えます。(例：mainブランチ)<br></p>
+                                    　<div class="code-block">
+                                        <pre><code>git switch main</code></pre>
+                                        <button class="copy-btn">コピー</button>
+                                    </div>
                                     <br>
-                                    　その後、以下のコマンドを実行して作業ブランチを統合します。<br>
-                                    　　　git merge ブランチ名<br>
+                                    <p>その後、以下のコマンドを実行して作業ブランチを統合します。<br></p>
+                                    <div class="code-block">
+                                        <pre><code>git merge ブランチ名</code></pre>
+                                        <button class="copy-btn">コピー</button>
+                                    </div>
                                     <br>
-                                    　マージが成功すると以下のようなメッセージが表示されます。<br>
-                                    　　　Updating abc1234..def5678<br>
-                                    　　　Fast-forward<br>
-                                    　　　ファイル名｜変更行数<br>
+                                    <p>マージが成功すると以下のようなメッセージが表示されます。</p>
+                                    　　　<div class="code-block">
+                <pre>
+<code>Updating abc1234..def5678
+Fast-forward
+ファイル名｜変更行数</code></pre>
+            </div>
+                                    <p>または</p>
+                <div class="code-block">
+                <pre>
+<code>merge mode by the 'recursibe' strategy.
+ファイル名｜変更行数</code></pre>
+                </div>
                                     <br>
-                                    　または<br>
-                                    　　　merge mode by the 'recursibe' strategy.<br>
-                                    　　　ファイル名｜変更行数<br>
+                                    <p>もし以下のメッセージが表示される場合はコンフリクトが起きています。</p>
+                <div class="code-block">
+                    <pre><code>Auto-merging ファイル名
+CONFLICT(content):Merge conflict in ファイル名</code></pre>
+                </div>
                                     <br>
-                                    　もし以下のメッセージが表示される場合はコンフリクトが起きています。<br>
-                                    　　　Auto-merging ファイル名<br>
-                                    　　　CONFLICT(content):Merge conflict in ファイル名<br>
-                                    <br>
-                                    　コンフリクトとは、両方のブランチで同じファイルが返納されていた場合、GItがどちらの変更を適用するのか判断できず、マージできないことです。<br>
-                                    　例えば、mainブランチをfeatureブランチの両方でexample.htmlの同じ行を編集した場合、Gitはどちらを採用すべきか判断できず、コンフリクトが発生します。<br>
-                                    　この場合は、手動でファイルを修正し、以下のコマンドで完了させます。<br>
+                                    <p>コンフリクトとは、両方のブランチで同じファイルが返納されていた場合、GItがどちらの変更を適用するのか判断できず、マージできないことです。<br>
+                                    例えば、mainブランチをfeatureブランチの両方でexample.htmlの同じ行を編集した場合、Gitはどちらを採用すべきか判断できず、コンフリクトが発生します。<br>
+                                        この場合は、手動でファイルを修正し、以下のコマンドで完了させます。<br></p>
+                p
                                     　　　git add ファイル名<br>
                                     　　　git commit<br>
                                     <br>
-                                    　コンフリクトが起きた時点で、Gitはマージプロセスを一時停止の状態になっています。<br>
-                                    　修正後にコミットするだけでGitはマージが完了したと認識するため、再度git merggeを実行する必要はありません。<br>
+                                    コンフリクトが起きた時点で、Gitはマージプロセスを一時停止の状態になっています。<br>
+                                    修正後にコミットするだけでGitはマージが完了したと認識するため、再度git merggeを実行する必要はありません。<br>
 
                                     <h3 id="section33">IssueとPull Request</h3>
                                         <p>
@@ -369,28 +439,28 @@
                                             このように、IssueとPull Requestはチーム開発においてより円滑にするために使用されます。<br>
                                             <br>
                                             実際の操作を行ってみましょう。<br>
-                                            ・Issue<br>
-                                            　GitHub公式サイトからアカウントにログインし、リモートリポジトリにアクセスします。<br>
+                                            <span class="underline">Issue</span><br>
+                                            GitHub公式サイトからアカウントにログインし、リモートリポジトリにアクセスします。<br>
                                             　　　公式サイト<br>
                                             <br>
-                                            　画面上部のIssuesタブを選択し、New issueボタンをクリックします。<br>
+                                            画面上部のIssuesタブを選択し、New issueボタンをクリックします。<br>
                                             　　　画面キャプ<br>
                                             <br>
-                                            　タイトルとコメントを入力しSubmit new Issueボタンをクリックします。<br>
+                                            タイトルとコメントを入力しSubmit new Issueボタンをクリックします。<br>
                                             　　　画面キャプ<br>
                                             　　　これでIssueの登録は完了です。<br>
                                             <br>
-                                            ・Pull Request<br>
-                                            　GitHub公式サイトからアカウントにログインし、リモートリポジトリにアクセスします。<br>
+                                            <span class="underline">Pull Request</span><br>
+                                            GitHub公式サイトからアカウントにログインし、リモートリポジトリにアクセスします。<br>
                                             　　公式<br>
                                             <br>
                                              画面上部の「Pull requests」タブを選択し「New pull request」ボタンをクリックします。<br>
                                             　　画面<Br>
                                             <br>
-                                            　「Create pull Request」ボタンをクリックします。<br>
+                                            「Create pull Request」ボタンをクリックします。<br>
                                             　　画面<br>
                                             <br>
-                                            　必要な項目を入力し「Create pull Request」ボタンをクリックします。<br>
+                                            必要な項目を入力し「Create pull Request」ボタンをクリックします。<br>
                                             　　画面<br>
                                             <br>
                                             これでPull Requestの完了です。<br>
