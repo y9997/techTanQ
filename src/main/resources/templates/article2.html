@@ -192,9 +192,11 @@
                             <p>
                                 windows<br>
                             1.以下の公式ページからwindows版Gitをダウンロードしてインストールします。<br>
-                            　　　https://git-scm.com/downloads<br>
+                                <a class="link_button" href="https://git-scm.com/downloads">
+                                    Git Downloads
+                                </a>
                             <br>
-                            2.インストール後、コマンドプロンプトを開いて以下のコマンドを実行します。
+                            <br>2.インストール後、コマンドプロンプトを開いて以下のコマンドを実行します。
                             　　　<div class="code-block">
                                     <pre><code>git --version</code></pre>
                                     <button class="copy-btn">コピー</button>
@@ -207,8 +209,9 @@
                             <span class="underline">GitHubアカウント作成</span><br>
                             GitHubを利用するには、アカウントが必要です。<br>
                             以下のGitHub公式サイトにアクセスし、アカウントを新規作成してください。<br>
-                            　URL
-                        </p>
+                                <a class="link_button" href="https://github.co.jp/">
+                                    Git公式サイト
+                                </a>
                         </p>
                 <h3 id="section22">リポジトリ作成と連携</h3>
                     <p>ここでは、GitHub上のリモートリポジトリと、PC上のローカルリポジトリの作成と連携方法について解説します<br>
@@ -217,9 +220,11 @@
                         GitHubの公式サイトから、GUI操作で簡単に作成できます。<br>
                         <br>
                         1.以下のURLからGitHubにアクセスし、ログインしてください。<br>
-                        　URL<Br>
+                        <a class="link_button" href="https://github.co.jp/">
+                            Git公式サイト
+                        </a>
                         <br>
-                        2.画面右上の＋ボタンからNew repositoryを選択します。<br>
+                        <br></br>2.画面右上の＋ボタンからNew repositoryを選択します。<br>
                         　キャプチャ<br>
                         <br>
                         3.各項目を入力し、create repositoryボタンをクリックします。<br>
@@ -252,8 +257,11 @@
                 <p>
                         <span class="underline">リポジトリ同士を繋げる</span><br>
                         現段階では各リポジトリは独立している状態なので、繋げる必要があります。<br>
-                        以下のコマンドを実行します。<br>
-                         　git remote add origin https://github.com/ユーザー名/リポジトリ名.git<br>
+                        以下のコマンドを実行します。
+                            <div class="code-block">
+                                <pre><code>git remote add origin https://github.com/ユーザー名/リポジトリ名.git</code></pre>
+                                <button class="copy-btn">コピー</button>
+                            </div>
                         <br>
                         連携が成功したか確認するには以下のコマンドを実行してください。</p>
                             <div class="code-block">
@@ -306,9 +314,9 @@ origin https://github.com/ユーザー名/リポジトリ名.git(push)</code></p
                 <p>
                         4.確認する<br>
                         プッシュが成功したか確認するにはGitHubにアクセスします。<br>
-                        　　　公式サイト<br>
-                        <br>
-                        自身のアカウント→対象のリポジトリを開いてください。<br>
+<a class="link_button" href="https://github.co.jp/">Git公式サイト
+</a>
+                        <br><br>自身のアカウント→対象のリポジトリを開いてください。<br>
                         ファイルが表示されたら成功です。<br></p>
 
                         <h2 id="section3">応用編</h2>
@@ -328,10 +336,13 @@ origin https://github.com/ユーザー名/リポジトリ名.git(push)</code></p
                                 それでは実際に操作してみましょう。<br>
                                 <br>
                                     <span class="underline">クローン</span><br>
-                                以下のコマンドを実行しクローンします。<br>
-                                　　git clone https://github.com/ユーザー名/リポジトリ名.git<br>
+                                以下のコマンドを実行しクローンします。
+                <div class="code-block">
+                    <pre><code>git clone https://github.com/ユーザー名/リポジトリ名.git</code></pre>
+                    <button class="copy-btn">コピー</button>
+                </div>
                                 　　<br>
-                                クローンが成功したか確認するため以下のコマンドを実行します。
+                                <p>クローンが成功したか確認するため以下のコマンドを実行します。</p>
                                 　　<div class="code-block">
                                         <pre><code>ls -a</code></pre>
                                         <button class="copy-btn">コピー</button>
@@ -441,9 +452,11 @@ CONFLICT(content):Merge conflict in ファイル名</code></pre>
                                             実際の操作を行ってみましょう。<br>
                                             <p><span class="underline">Issue</span><br></p>
                                             <p>itHub公式サイトからアカウントにログインし、リモートリポジトリにアクセスします。<br>
-                                            　　　公式サイト<br>
+                                            <a class="link_button" href="https://github.co.jp/">
+                                           Git公式サイト
+                                            </a>
                                             <br>
-                                            画面上部のIssuesタブを選択し、New issueボタンをクリックします。<br>
+                                            <br>画面上部のIssuesタブを選択し、New issueボタンをクリックします。<br>
                                             　　　画面キャプ<br>
                                             <br>
                                             タイトルとコメントを入力しSubmit new Issueボタンをクリックします。<br>
@@ -452,9 +465,10 @@ CONFLICT(content):Merge conflict in ファイル名</code></pre>
                                             <br>
                                             <span class="underline">Pull Request</span><br></p>
                                             <p>GitHub公式サイトからアカウントにログインし、リモートリポジトリにアクセスします。<br>
-                                            　　公式<br>
+                                                <a class="link_button" href="https://github.co.jp/">Git公式サイト
+                                                </a>
                                             <br>
-                                             画面上部の「Pull requests」タブを選択し「New pull request」ボタンをクリックします。<br>
+                                             <br>画面上部の「Pull requests」タブを選択し「New pull request」ボタンをクリックします。<br>
                                             　　画面<Br>
                                             <br>
                                             「Create pull Request」ボタンをクリックします。<br>

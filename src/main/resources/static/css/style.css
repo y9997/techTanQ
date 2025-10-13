@@ -407,7 +407,7 @@ body {
   top: 8px;
   right: 8px;
   background: #d9e7f6;
-  color: black;
+  color: white;
   border: none;
   padding: 4px 8px;
   border-radius: 4px;
@@ -419,14 +419,28 @@ body {
 .copy-btn:hover {
   background: #4a90e2;
 }
-body.dark-mode .code-block {
-  background: #2b2b2b;
-  color: #e0e0e0;
+.link_button {
+  /*font-weight: bold;*/
+  text-decoration: none;
+  background: #d9e7f6;
+  color: black;
+  padding:5px 10px;
+  border-radius: 20px;
+  font-family: 'Avenir','Arial';
 }
 
-body.dark-mode .copy-btn {
-  background: #6ba5f2;
+.link_button:hover {
+  background: silver;
+  text-decoration: none;
 }
+
+
+.link_button:visited {
+  color: gray;
+}
+
+
+
 
 
 body.dark-mode {
