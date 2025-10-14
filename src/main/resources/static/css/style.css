@@ -436,6 +436,15 @@ body {
   border-radius: 20px;
   font-family: 'Avenir','Arial';
 }
+body.dark-mode .link_button {
+  background-color: transparent;
+  color: #d9e7f6;
+  border: 2px solid #d9e7f6;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
 
 .link_button:hover {
   background: silver;
