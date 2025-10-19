@@ -390,6 +390,11 @@ h3::after {
 	margin: 0;
 	font-size: 20px;
 }
+#date-display {
+  font-family: "Consolas", "Courier New", monospace;
+
+}
+
 .underline {
     background: linear-gradient(transparent 80%, #d9e7f6 70%);
 }
