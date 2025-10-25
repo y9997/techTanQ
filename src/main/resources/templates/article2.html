@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Understanding GitHub</title>
+    <title>【GitHub】初心者のための完全ガイド</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 </head>
@@ -65,7 +65,7 @@
         <div class="wrapper">
             <article>
                 <p id="date-display">2025/10/05</p>
-            <h1>【図解】GitHubとは</h1>
+            <h1>【GitHub】初心者のための完全ガイド</h1>
             <img src="/images/github-image.png" alt="github-imageサムネイル" class="article__image">
             <h2>目次</h2>
                 <nav class="toc">
@@ -117,7 +117,8 @@
                     </p>
 
                 <h3 id="section12">リポジトリとは</h3>
-                    <p>リポジトリとは、コード、ファイル、各ファイルの改訂履歴を保存、管理する場所のことです。GitHubでは、このリポジトリを使ってプロジェクトの状態を記録し、過去の変更を追跡することができます。<br>
+                    <p>
+                        リポジトリとは、コード、ファイル、各ファイルの改訂履歴を保存、管理する場所のことです。GitHubでは、このリポジトリを使ってプロジェクトの状態を記録し、過去の変更を追跡することができます。<br>
                         <br>
                         リポジトリにはリモートリポジトリとローカルリポジトリの2種類があります。<br>
                         リモートリポジトリとはGitHub上に存在し、複数人の開発者と共同で使用するリポジトリのことです。<br>
@@ -126,34 +127,67 @@
                         ローカルリポジトリとはローカル環境に存在し、個人で作業する際に使用されます。<br>
                         ここで行った変更を後でリモートリポジトリに反映させることができます。<br>
                         <br>
-                        GitHubではこの２つのリポジトリを連携することで、チーム開発やバージョン管理を可能にしています。
+                        <p>以下の図のようにイメージすると良いでしょう。</p><br>
+                        <br>
+                        <div class="diagram">
+                            <img src="/images/github-repository-l.svg" alt="github-リポジトリ" class="light-mode">
+                            <img src="/images/github-repository-d.svg" alt="github-リポジトリ" class="dark-mode">
+                        </div>
+                        <br>
+                        <p>GitHubではこの２つのリポジトリを連携することで、チーム開発やバージョン管理を可能にしています。</p><br>
                     </p>
 
                 <h3 id="section13">用語解説</h3>
                     <p>GitHubを使う上で頻繁に登場する基本用語を初心者向けにわかりやすく解説します。<br>
                         <br>
-                        <span class="underline">ステージ</span><br>
-                        リモートリポジトリに反映したいファイルを選び、変更を記録する準備をすることを「ステージ」と呼びます。<br>
+                        <span class="underline">ステージ</span><br><br>
+                        <div class="diagram">
+                            <img src="/images/github-stage-l.svg" alt="github-リポジトリ" class="light-mode">
+                            <img src="/images/github-stage-d.svg" alt="github-リポジトリ" class="dark-mode">
+                        </div>
+                            <p><br>リモートリポジトリに反映したいファイルを選び、変更を記録する準備をすることを「ステージ」と呼びます。<br>
+                        具体的には、作業ディレクトリからステージングエリアに移動させることです。作業ディレクトリとは普段ファイルを編集している場所のことで、ステージングエリアとは次にコミットする対象を配置する場所のことです。<br>
                         この操作によって、どのファイルを次のコミットに含めるかを指定できます。<br>
-                        <br>
-                        <span class="underline">コミット</span><br>
-                        ステージしたファイルの変更内容を、ローカルリポジトリに保存する操作です。<br>
-                        「いつ」「何を変更したか」を記録することで、履歴を追えるようになります。<br>
-                        <br>
-                        <span class="underline">プッシュ</span><br>
-                        ローカルリポジトリに保存された変更をリモートリポジトリに反映させる操作です。<br>
+                        <br><br>
+                        <span class="underline">コミット</span><br><br>
+                        <div class="diagram">
+                            <img src="/images/github-commit-l.svg" alt="github-リポジトリ" class="light-mode">
+                            <img src="/images/github-commit-d.svg" alt="github-リポジトリ" class="dark-mode">
+                        </div>
+                        <p><br>ステージの内容をローカルリポジトリに確定して記録する操作です。<br>
+                        「いつ」「何を変更したか」を記録することができ、履歴を追えるようになります。<br>
+                        <br><br>
+                        <span class="underline">プッシュ</span><br><br>
+                        <div class="diagram">
+                            <img src="/images/github-push-l.svg" alt="github-リポジトリ" class="light-mode">
+                            <img src="/images/github-push-d.svg" alt="github-リポジトリ" class="dark-mode">
+                        </div>
+                        <p><br>ローカルリポジトリに保存された変更をリモートリポジトリに反映させる操作です。<br>
                         これにより、他の開発者と変更内容を共有できます。<br>
-                        <br>
-                        <span class="underline">ブランチ</span><br>
-                        リポジトリに中で、機能追加や修正などを行うために分岐させた作業用の領域です。<br>
+                        <br><br>
+                        <span class="underline">ブランチ</span><br><br>
+                        <div class="diagram">
+                            <img src="/images/github-branch-l.svg" alt="github-リポジトリ" class="light-mode">
+                            <img src="/images/github-branch-d.svg" alt="github-リポジトリ" class="dark-mode">
+                        </div>
+                        <p><br>リポジトリに中で、機能追加や修正などを行うために分岐させた作業用の領域です。<br>
                         本流(main)とは別に作業できるため、安全に開発を進められます。<br>
-                        <br>
-                        <span class="underline">クローン</span><br>
-                        リモートリポジトリの内容を、自分のローカル環境にコピーする操作です。<br>
+                        修正などを行った後、mainにマージすることもできます。<br>
+                        <br><br>
+                        <span class="underline">クローン</span><br><br>
+                        <div class="diagram">
+                            <img src="/images/github-clone-l.svg" alt="github-リポジトリ" class="light-mode">
+                            <img src="/images/github-clone-d.svg" alt="github-リポジトリ" class="dark-mode">
+                        </div>
+                        <p><br>リモートリポジトリの内容を、自分のローカル環境にコピーする操作です。<br>
                         これにより、手元で編集や確認ができるようになります。<br>
-                        <br>
-                <span class="underline">フォーク</span><br>
-                        他人のリモートリポジトリをコピーして、自分のGitHubアカウント常に新しいリモートリポジトリを作成する操作です。<br>
+                        <br><br>
+                        <span class="underline">フォーク</span><br><br>
+                        <div class="diagram">
+                            <img src="/images/github-folk-l.svg" alt="github-リポジトリ" class="light-mode">
+                            <img src="/images/github-folk-d.svg" alt="github-リポジトリ" class="dark-mode">
+                        </div>
+                        <p><br>他人のリモートリポジトリをコピーして、自分のGitHubアカウント常に新しいリモートリポジトリを作成する操作です。<br>
                         オープンソースプロジェクトへの貢献や、独自の改良を加える際に使われます。<br>
                     </p>
 

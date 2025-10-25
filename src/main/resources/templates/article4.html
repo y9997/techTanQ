@@ -1,12 +1,265 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>IntelliJ Basics Guide</title>
+    <title>【IDE】IntelliJのはじめかたと基本操作ガイド</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 </head>
-<body>
 
+<body>
+<header>
+    <div class="header-logo"><a th:href="@{/}" class="logo-link">テック探求記</a></div>
+    <nav>
+        <ul class="header-ul" style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+            <li class="header-li">
+                <button id="toggle-dark-mode" style="padding: 8px 12px; border: none; background: none; cursor: pointer; font-size: 18px;">
+                    🌙
+                </button>
+            </li>
+            <li class="header-li"><a th:href="@{/}">ホーム</a></li>
+            <li class="header-li"><a th:href="@{/about}">プロフィール</a></li>
+            <li class="header-li"><a th:href="@{/contact}">お問い合わせ</a></li>
+            <li class="header-li">
+                <form action="/search" method="get" style="display: flex; align-items: center;">
+                    <input type="search" name="q" placeholder="サイト内検索">
+                    <button type="submit">検索</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="toc-fixed">
+    <nav class="toc">
+        <button class="toc-toggle">−</button>
+        <ul>
+            <li><a href="#section0">0.はじめに</a></li>
+            <li><a href="#section1">1.IntelliJとは</a></li>
+            <li><a href="#section2">2.インストール方法</a>
+                <ul>
+                    <li><a href="#section21">2.1.macOS</a></li>
+                    <li><a href="#section22">2.2.windows</a></li>
+                </ul>
+            </li>
+            <li><a href="#section3">3.基本操作</a>
+                <ul>
+                    <li><a href="#section31">3.1.Hello Worldの表示</a></li>
+                </ul>
+            </li>
+            <li><a href="#section0">4.さいごに</a></li>
+        </ul>
+    </nav>
+</div>
+
+<main>
+    <div class="article">
+        <div class="wrapper">
+            <p id="date-display">2025/10/19</p>
+            <h1>【IDE】IntelliJのはじめかたと基本操作ガイド</h1>
+            <img src="/images/eclipse-image.png" alt="eclipse-imageサムネイル" class="article__image">
+
+            <h2>目次</h2>
+            <nav class="toc">
+                <ul>
+                    <li><a href="#section0">0.はじめに</a></li>
+                    <li><a href="#section1">1.IntelliJとは</a></li>
+                    <li><a href="#section2">2.インストール方法</a>
+                        <ul>
+                            <li><a href="#section21">2.1.macOS</a></li>
+                            <li><a href="#section22">2.2.windows</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#section3">3.基本操作</a>
+                        <ul>
+                            <li><a href="#section31">3.1.Hello Worldの表示</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#section4">4.さいごに</a></li>
+                </ul>
+            </nav>
+
+            <h2 id="section0">はじめに</h2>
+            <p>
+                この記事ではIntelliJ IDEAの概要から操作方法まで初学者向けにわかりやすく紹介しました。<br>
+                これからJavaなどの開発を始めたい方に向けて、IntelliJの基本スキルが自然と身につくようにまとめました。<br>
+                ぜひ最後まで読んで開発の第一歩を踏み出してみましょう!
+            </p>
+
+            <h2 id="section1">IntelliJとは</h2>
+            <p>
+                IntelliJ IDEAとは、JetBrains社が提供する統合開発環境(IDE)です。<br>
+                主にJavaやKotlinの開発に適しており、初心者からプロまで幅広く利用されています。<br>
+                以下のような特徴があります。<br>
+                <br>
+                モダンで直感的なUI<br>
+                拡張子別にアイコンのデザインが異なっているため視認性が高く、誤操作を起こしにくいです。<br>
+                また、アクセス箇所が明確になっているため、クリック数が少なく生産性の向上が期待できます。<br>
+                <br>
+                充実したリファクタリング機能<br>
+                リファクタリングとは元の機能を変えずにソースコードを改善することです。<br>
+                IntelliJは、コードの変更を行うとその変更箇所の修正を自動で行うため、スピーディに開発を行うことができます。<br>
+                <br>
+                豊富なコーディング機能<br>
+                ほぼリアルタイムで正確な候補を提示するため、効率的な開発を行うことができます。<br>
+                <br>
+                JDKのインストールが不要<br>
+                InteliJにはJDKが同封されているため、初心者でもすぐに始められます。<br>
+                <br>
+                初期設定を行う必要がほとんどない<br>
+                基本的な機能はあらかじめ設定されているため、面倒な初期設定なしで使い始められます。<br>
+                <br>
+                有料版と無料版がある<br>
+                IntelliJは有料版のUltimateと無料版のCommunityがあります。<br>
+                Springやデータベース連携など高度な機能は有料版に含まれますが、無料版でも十分に開発可能です。<br>
+                <br>
+                IntelliJ IDEAは、初心者にも扱いやすく、開発効率を高める機能が豊富に備わったIDEです。<br>
+                特にUIの使いやすさや自動ほかん、リファクタリング機能などは、初めての開発でも安心して取り組めるポイントです。<br>
+                次章では、実際にIntelliJをインストールして使い始める方法を紹介します。<br>
+            </p>
+
+            <h2 id="section2">インストール方法</h2>
+            <p>
+                この章では、IntelliJ IDEAのインストール方法をOS別で紹介します。<br>
+                有料版と無料版に注意してインストールを行いましょう。<Br>
+            </p>
+
+            <h3 id="section21">macOSの場合</h3>
+            <p>
+                以下のリンクから公式サイトにアクセスします。
+                <a class="link_button" href="https://www.jetbrains.com/ja-jp/idea/download/">
+                    IntelliJ ダウンロードページ
+                </a><br><br>
+                macOSのタブをクリックします。<br>
+                <br>
+                ダウンロードのボタンが見えていると思いますが、それは有料版の方です。<br>
+                少し下にスクロールし、「Community版」のダウンロードボタンをクリックします。<br>
+                <br>
+                ダウンロードされたインストーラをクリックして起動します。<br>
+                <br>
+                セットアップ画面が表示されます。<br>
+                「次へ」ボタンを押してください。<br>
+                <br>
+                インストール先フォルダに任意の場所を指定し、「次へ」ボタンをクリックします。<br>
+                <br>
+                必要な項目にチェックをいれ、「次へ」ボタンをクリックします。<br>
+                デスクトップショートカットは便利なのでおすすめです。<br>
+                <br>
+                デスクトップショートカットを選択した場合に表示されます。<br>
+                スタートメニューに表示される名前を変更することができます。<br>
+                お好みの名前を入力し、「インストール」ボタンをクリックします。<br>
+                <br>
+                インストールが終わったら以下の画面が表示されます。<br>
+                「完了」を押す前にチェックを入れることで、すぐにIntelliJを移動することができます。<br>
+                <br>
+                初回起動時は、利用規約の画面が表示されます。<br>
+                規約に問題ない場合は同意をして、「続行」ボタンをクリックします。<br>
+                <br>
+                データ共有の可否の選択画面です。<br>
+                お好みでどちらかを選択しましょう。<br>
+                <br>
+                スタート画面が表示されます。<br>
+                これでインストールは完了です。<br>
+                <br>
+            </p>
+
+            <h3 id="section22">windowsの場合</h3>
+            <p>
+                以下のリンクから公式サイトにアクセスします。<br>
+                <a class="link_button" href="https://www.jetbrains.com/ja-jp/idea/download/">
+                    IntelliJ ダウンロードページ
+                </a><br><br>
+                「Windows」のタブが選択されていることを確認します。<br>
+                <br>
+                ダウンロードのボタンが見えていると思いますが、それは有料版の方です。<br>
+                少し下にスクロールし、「Community版」のダウンロードボタンをクリックします。<br>
+                <br>
+                「.exe(Windows)」を選択してダウンロードしましょう。<br>
+                ※ARM搭載のPCの場合は「.exe(ARM64)」を選択してください。<br>
+                確認方法は「設定→システム→バージョン情報→システムの種類」で「ARM64」と表示されていれば対象です。<br>
+                <br>
+                ダウンロードしたファイルをダブルクリックします。<br>
+                <br>
+                セットアップ画面が表示されます。<br>
+                「次へ」をクリックします。<br>
+                <br>
+                インストール先フォルダを指定して「次へ」をクリックします。<br>
+                <br>
+                必要な項目にチェックをいれ、「次へ」ボタンをクリックします。<br>
+                デスクトップショートカットは今後よく使う予定の人におすすめです。<br>
+                <br>
+                デスクトップショートカットを選択した場合に表示されます。<Br>
+                スタートメニューに表示される名前を変更することができます。<br>
+                お好みの名前を入力し、「インストール」ボタンをクリックします。<br>
+                <br>
+                インストールが終わったら以下の画面が表示されます。<Br>
+                「完了」を押す前に、チェックを入れることですぐにIntelliJを起動することができます。<br>
+                <br>
+                初回起動時は、利用規約の画面が表示されます。<br>
+                規約に問題ない場合は同意して「続行」ボタンをクリックします。<br>
+                <br>
+                データ共有可否の画面です。<br>
+                お好みでどちらかを選択しましょう。<br>
+                <br>
+                スタート画面が表示されます。<br>
+                これでインストールは完了です。<br>
+                <br>
+            </p>
+
+            <h2 id="section3">操作方法</h2>
+            <h3 id="section31">Hello worldの表示</h3>
+            <p>
+                この章では、実際にIntelliJでプログラムを動かす方法をご紹介いたします。<br>
+                ここでは定番の「Hello World!」をコンソールに表示する簡単なプログラムを作成してみましょう。<br>
+                ぜひ一緒に手を動かしながら進めてみてください。<br>
+                <br>
+                1.プロジェクトの新規作成<br>
+                　まずは新しいプロジェクトを作成します。<br>
+                　プロジェクトとは、開発作業をまとめて管理する入れ物のようなものです。<br>
+                　IntelliJを起動し、スタート画面で「New Project」をクリックします。<br>
+                <br>
+                　プロジェクトタイプとし「Java」を選択し、任意のプロジェクト名を入力したら「Create」をクリックします。<br>
+                <br>
+                　作成されたプロジェクトのツールウィンドウで「src」フォルダーを右クリックし、「新規→Javaクラス」を選択します。<br>
+                <br>
+                　名前フィールドに「com.example.helloworld.HelloWorld」を入力し、「ok」をクリックしましょう。<br>
+                <br>
+                　これで「com.example.helloworld」パッケージと「HelloWorld」クラスが作成されました。<br>
+                <br>
+                <br>
+                2.コードの記述<br>
+                　プロジェクトの作成後はコンソールに「Hello World!」と表示するプログラムを書いていきましょう。<br>
+                　クラスの中括弧{の内側にカーソルを置き、「Shift」＋「Enter」で改行します。<br>
+                <br>
+                　「main」と入力すると、候補にmainメソッドが表示されるので選択します。<br>
+                　※IntelliJのライブテンプレート機能により、文脈に応じたコードが自動保管されます。<br>
+                <br>
+                　メインメソッド記述後はprintln()メソッドを呼び出しましょう。<bR>
+                　「Sy」と記述し、候補リストから「System」を選択します。<br>
+                <br>
+                　
+            </p>
+
+            <h2 id="section4">さいごに</h2>
+            <p>
+                Eclipseの概要から実際のプログラム実行まで、本当にお疲れさまでした！<br>
+                最初は難しく感じるかもしれませんが、ITのツールや技術は「とりあえず触ってみる」ことが一番の近道です。<br>
+                今回の手順を通して、開発環境の流れやプログラムの動作が少しでもイメージできたら嬉しいです。<br><br>
+                Eclipseを使いこなせるようになると、Java開発の幅がぐっと広がります。<br>
+                この経験をきっかけに、ぜひ他のプロジェクトや技術にもチャレンジしてみてください。<br><br>
+                ここまで読んでいただき、ありがとうございました！また次の記事でお会いしましょう。☕
+            </p>
+        </div>
+    </div>
+</main>
+
+
+</div>
+<footer class="footer">
+    <div style="text-align:center">
+        <p>© <span id="year"></span> tech-tanQ.</p>
+    </div>
+</footer>
+<script src="/js/darkmode.js"></script>
 </body>
 </html>

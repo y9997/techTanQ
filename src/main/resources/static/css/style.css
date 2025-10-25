@@ -208,7 +208,19 @@ body.dark-mode .toc-toggle {
   font-weight: bold;
   text-decoration: none;
 }
-
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  box-shadow:
+      0 0 6px rgba(255, 255, 255, 0.08),
+      0 0 12px rgba(255, 255, 255, 0.04);
+}
+body.dark-mode .card__image {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+body.dark-mode .card__footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
 .card__thumbnail {
   margin: 0;
   order: 0;
@@ -331,6 +343,27 @@ body.dark-mode .toc-toggle {
 	 transition: background-color 0.3s, color 0.3s;
 	 padding: 10px;
 	 margin-top: 4em;
+}
+.diagram {
+  text-align: center;
+}
+.diagram img {
+  display: inline-block; /* imgはもともとinline扱いですが念のため */
+  max-width: 100%;       /* 必要に応じてレスポンシブ対応 */
+  height: auto;
+}
+
+.diagram .dark-mode {
+  display: none;
+}
+
+/* ダークモード時だけ表示 */
+body.dark-mode .diagram .light-mode {
+  display: none;
+}
+
+body.dark-mode .diagram .dark-mode {
+  display: inline;
 }
 
 h1 {
