@@ -16,11 +16,6 @@ public class HomeController {
         return "about";
     }
 
-    @GetMapping("/contact")
-    public String contact() {
-        return "contact";
-    }
-
     @GetMapping("/article1")
     public String article1() {
         return "article1";

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>thankyou</title>
+    <title th:text="'「' + ${query} + '」の検索結果'">検索結果</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 </head>
+
 <body>
 <header>
     <div class="header-logo"><a th:href="@{/}" class="logo-link">テック探求記</a></div>
@@ -28,20 +29,23 @@
         </ul>
     </nav>
 </header>
-<div class="wrapper">
-    <main>
-        <h1>success</h1>
-        <br>
-        <p>お問い合わせありがとうございました！</p>
-        <P>問い合わせ内容を確認いただくため、自動返信メールをお送りしました。<br>
-            ご登録いただいたメールアドレスをご確認ください。</P>
-    </main>
-</div>
-<footer class="footer">
-    <div style="text-align:center">
-        <p>© <span id="year"></span> tech-tanQ.</p>
+
+<main>
+ <!--   <div class="article">
+        <div class="wrapper"> -->
+<h1 th:text="'「' + ${query} + '」の検索結果'"></h1>
+
+    <ul>
+        <li th:each="article : ${results}">
+            <a th:href="@{'/' + ${article.htmlFile}}" th:text="${article.title}"></a>
+        </li>
+    </ul>
+
+
+
+    <p th:if="${#lists.isEmpty(results)}">該当する記事はありませんでした。</p>
+        </div>
     </div>
-</footer>
-<script src="/js/darkmode.js"></script>
+</main>
 </body>
 </html>

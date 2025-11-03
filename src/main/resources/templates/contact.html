@@ -26,29 +26,27 @@
                 </form>
             </li>
         </ul>
-
     </nav>
-
 </header>
 <div class="wrapper">
     <main>
         <h1>お問い合わせ</h1>
         <p>以下のフォームからご連絡いただけます。</p>
-        <form method="post" th:action="@{/contact/send}">
+        <form th:action="@{/contact/send}" method="post" th:object="${contact}">
             <div class="form">
                 <div class="form--item">
                     <p class="form--item__label"><span class="form--item__label__repuired">必須</span>お名前</p>
-                    <input type="text" name="name" class="form--item__input">
+                    <input type="text" th:field="*{name}" class="form--item__input" required>
                 </div>
                 <br>
                 <div class="form--item">
                     <p class="form--item__label"><span class="form--item__label__repuired">必須</span>メールアドレス</p>
-                    <input type="email" name="email" class="form--item__input">
+                    <input type="email" th:field="*{email}" class="form--item__input" required>
                 </div>
                 <br>
                 <div class="form--item">
                     <p class="form--item__label"><span class="form--item__label__repuired">必須</span>お問い合わせ内容</p>
-                    <textarea name="message" class="form--item__textarea"></textarea>
+                    <textarea th:field="*{message}" class="form--item__textarea" required></textarea>
                 </div>
                 <br>
                 <input type="submit" class="form--buttom" value="送信する">
